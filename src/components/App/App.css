@@ -21,3 +21,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.galleryDisplay {
+  padding: 5%;
+  margin: 2.5% auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.galleryItem {
+  display: grid;
+  margin: 2.5% auto;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
