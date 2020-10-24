@@ -23,7 +23,6 @@
 }
 
 .galleryDisplay {
-  padding: 5%;
   margin: 2.5% auto;
   display: flex;
   flex-wrap: wrap;
@@ -32,9 +31,16 @@
 .galleryItem {
   display: grid;
   margin: 2.5% auto;
+  max-width: 200px;
+  max-height: 300px;
 }
 
-img {
+img, .imgDescription {
   width: 200px;
   height: 200px;
+  margin: 0%;
+}
+
+button {
+  height: 50px;
 }

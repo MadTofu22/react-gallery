@@ -18,13 +18,12 @@ class GalleryItem extends Component {
 
     render () {
         return (
-            <section className='galleryItem' key={this.props.item.id} onClick={this.updateImgVisbility}>
+            <section className='galleryItem' key={this.props.item.id} >
                 {this.state.imgShowing ?
-                <img src={this.makePath()} alt={this.props.item.description}/>
+                <img src={this.makePath()} alt={this.props.item.description} onClick={this.updateImgVisbility}/>
                 :
-                <p>{this.props.item.description}</p>
+                <p className="imgDescription" onClick={this.updateImgVisbility}>{this.props.item.description}</p>
                 }
-                <br />
                 <button onClick={() => {this.props.likeImage(this.props.item.id)}}>Like</button>
             </section>
         );

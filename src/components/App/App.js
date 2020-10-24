@@ -28,6 +28,10 @@ class App extends Component {
     });
   }
 
+  likeImage = (id) => {
+    console.log('lime image has been clicked, id:', id);
+  }
+
   render() {
     return (
       <div className="App">
@@ -35,9 +39,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        <p>Gallery goes here</p>
-        {JSON.stringify(this.state.gallery)}
-        <GalleryList list={this.state.gallery} />
+        <GalleryList list={this.state.gallery} likeImage={this.likeImage}/>
       </div>
     );
   }
