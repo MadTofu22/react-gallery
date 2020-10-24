@@ -16,7 +16,7 @@ class App extends Component {
 
   getGallery = () => {
     axios({
-      methos: 'GET',
+      method: 'GET',
       url: '/gallery'
     }).then(response => {
       console.log(response.data);
@@ -31,6 +31,15 @@ class App extends Component {
   likeImage = (id) => {
     console.log('lime image has been clicked, id:', id);
     
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${id}`
+    }).then(response => {
+      console.log(response);
+      this.getGallery();
+    }).catch(error => {
+      console.log(error);
+    });
   }
 
   render() {

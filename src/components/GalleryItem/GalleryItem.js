@@ -18,6 +18,12 @@ class GalleryItem extends Component {
 
     displayLikes(numOfLikes) {
         console.log('in displayLikes', numOfLikes);
+        return (
+            numOfLikes === 0 ? 
+            <p className="likesDisplay">No likes yet.</p>
+            :
+            <p className="likesDisplay">{numOfLikes} likes for this image.</p>
+        );
     }
 
     render () {
@@ -29,7 +35,7 @@ class GalleryItem extends Component {
                 <p className="imgDescription" onClick={this.updateImgVisbility}>{this.props.item.description}</p>
                 }
                 <button onClick={() => {this.props.likeImage(this.props.item.id)}}>Like</button>
-                <p className="likesDisplay">{this.displayLikes(Number(this.props.item.likes))}</p>
+                {this.displayLikes(Number(this.props.item.likes))}
             </section>
         );
     }
