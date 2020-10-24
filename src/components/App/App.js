@@ -30,6 +30,7 @@ class App extends Component {
 
   likeImage = (id) => {
     console.log('lime image has been clicked, id:', id);
+    
   }
 
   render() {

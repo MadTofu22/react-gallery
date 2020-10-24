@@ -16,6 +16,10 @@ class GalleryItem extends Component {
         });
     }
 
+    displayLikes(numOfLikes) {
+        console.log('in displayLikes', numOfLikes);
+    }
+
     render () {
         return (
             <section className='galleryItem' key={this.props.item.id} >
@@ -25,6 +29,7 @@ class GalleryItem extends Component {
                 <p className="imgDescription" onClick={this.updateImgVisbility}>{this.props.item.description}</p>
                 }
                 <button onClick={() => {this.props.likeImage(this.props.item.id)}}>Like</button>
+                <p className="likesDisplay">{this.displayLikes(Number(this.props.item.likes))}</p>
             </section>
         );
     }
